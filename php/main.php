@@ -19,9 +19,8 @@ function draw_calendar($month, $year) {
 	$headings = array('Пн','Вт','Ср','Чт','Пт','Сб','Вс');
 	$calendar.= '<tr class="b-calendar__row">';
 	for($head_day = 0; $head_day <= 6; $head_day++) {
-		$calendar.= '<th class="b-calendar__head';
-		$calendar .= '">';
-		$calendar.= '<div class="b-calendar__number">'.$headings[$head_day].'</div>';
+		$calendar.= '<th>';
+		$calendar.= '<div>'.$headings[$head_day].'</div>';
 		$calendar.= '</th>';
 	}
 	$calendar.= '</tr>';
@@ -51,7 +50,7 @@ function draw_calendar($month, $year) {
 		$calendar.= '<td class="b-calendar__day';
 	 	$calendar .= '">';
 		// пишем номер в ячейку
-		$calendar.= '<div class="b-calendar__number">'.$list_day."
+		$calendar.= '<div>'.$list_day."
 
 <form action='organizer.php' method='POST' id='form-{$list_day}'>
     <input type='text' name='number' value='{$list_day}' style='display: none'>
@@ -64,7 +63,7 @@ function draw_calendar($month, $year) {
 			$calendar.= '</tr>';
 			// если день не последний в месяце, начинаем следующую строку
 			if (($day_counter + 1) != $days_in_month) {
-				$calendar.= '<tr class="b-calendar__row">';
+				$calendar.= '<tr>';
 			}
 			// сбрасываем счетчики 
 			$running_day = -1;
